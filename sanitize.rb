@@ -4,8 +4,11 @@ require 'csv'
 require 'pp'
 require 'httparty'
 
+#request input for the group auth token
 print "Account Authentication Token: "
 auth_token = gets.gsub(/\s+/, '')
+
+#open deleteList.csv and methodically remove the content
 File.open('deleteList.csv', 'r') do |f|
   first_row = true
   column_mappings = {}
