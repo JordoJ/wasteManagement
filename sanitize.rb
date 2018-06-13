@@ -9,7 +9,6 @@ auth_token = gets.gsub(/\s+/, '')
 File.open('deleteList.csv', 'r') do |f|
   first_row = true
   column_mappings = {}
-  # CSV.parse(f.read.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')).each do |row|
   CSV.parse(f.read).each do |row|
     if first_row
       row.each_with_index do |column, i|
